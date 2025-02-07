@@ -3,24 +3,22 @@ export default {
    theme: {
     extend: {
       animation: {
+        marquee: "marquee 25s linear infinite",
         'spin-slow': 'spin 3s linear infinite',
         'sparkle-fade': 'sparkle 700ms forwards',
+        
       },
       keyframes: {
+        
         sparkle: {
-          '0%': {
-            opacity: 1,
-            transform: 'scale(0) rotate(0deg)',
+          marquee: {
+            "0%": { transform: "translateX(0%)" },
+            "100%": { transform: "translateX(-50%)" },
           },
-          '50%': {
-            opacity: 0.7,
-            transform: 'scale(1) rotate(180deg)',
-          },
-          '100%': {
-            opacity: 0,
-            transform: 'scale(0) rotate(360deg)',
-          },
+         
+
         }
+        
       }
     }
   },
