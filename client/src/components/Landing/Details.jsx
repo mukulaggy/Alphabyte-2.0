@@ -1,78 +1,74 @@
-const Details = () => {
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function EventDetails() {
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+  };
   return (
-    <div className="bg-black min-h-screen text-white font-inter p-8">
-      <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent shadow-lg">
-        Funzd Details
-      </h1>
-      <p className="text-gray-400 text-lg mb-12">
-        Registered invite for nitercent yistims of out effluent of they seck
-        bases rection.
-      </p>
+    <div className="min-h-screen bg-black text-white py-16 px-4 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto space-y-12">
+        {/* Title */}
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
+          {...fadeIn}
+        >
+          Event Details
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4" />
+        </motion.h1>
 
-      <h2 className="text-white mb-8 text-2xl">Mode of Conduct</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 transition-transform hover:-translate-y-1 hover:bg-opacity-20">
-          <h2 className="text-pink-400 text-xl mb-6 flex items-center gap-2">
-            <span className="w-2 h-2 bg-pink-400 rounded-full"></span> Round 1
-          </h2>
-          <ul className="list-none space-y-4">
-            <li className="relative pl-6 text-gray-300">
-              <span className="absolute left-0 top-1/2 w-1.5 h-1.5 bg-pink-500 bg-opacity-50 rounded-full transform -translate-y-1/2"></span>
-              Online Round{" "}
-              <span className="ml-2 bg-pink-500 bg-opacity-20 text-pink-400 px-3 py-1 rounded-full text-sm">
-                36HR
-              </span>
-            </li>
-            <li className="relative pl-6 text-gray-300">
-              March 15th, 2024 at 11:55 PM
-            </li>
-            <li className="relative pl-6 text-gray-300">
-              Team Size: 3-4 members
-            </li>
-            <li className="relative pl-6 text-gray-300">
-              Multiple hack domains available
-            </li>
-          </ul>
+        {/* Rounds Container */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Round 1 */}
+          <div className="rounded-2xl backdrop-blur-sm bg-white/5 p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] group">
+            <h2 className="text-2xl font-semibold text-pink-400 mb-6 group-hover:text-purple-300">Round 1</h2>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <span className="px-3 py-1 text-sm bg-pink-500/20 rounded-full text-pink-400">36HR</span>
+                <span className="text-gray-300">Online Round</span>
+              </div>
+              <p className="text-gray-400">March 15th, 2024 at 11:55 PM</p>
+              <p className="text-gray-400">Team Size: 3-4 members</p>
+              <p className="text-gray-400">Multiple hack domains available</p>
+            </div>
+          </div>
+
+          {/* Round 2 */}
+          <div className="rounded-2xl backdrop-blur-sm bg-white/5 p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] group">
+            <h2 className="text-2xl font-semibold text-pink-400 mb-6 group-hover:text-purple-300">Round 2</h2>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <span className="px-3 py-1 text-sm bg-pink-500/20 rounded-full text-pink-400">12HR</span>
+                <span className="text-gray-300">Offline Round</span>
+              </div>
+              <p className="text-gray-400">March 20th, 2024 at 8:00 AM</p>
+              <p className="text-gray-400">Selected teams only</p>
+              <p className="text-gray-400">Venue: Main Campus</p>
+            </div>
+          </div>
         </div>
 
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 transition-transform hover:-translate-y-1 hover:bg-opacity-20">
-          <h2 className="text-pink-400 text-xl mb-6 flex items-center gap-2">
-            <span className="w-2 h-2 bg-pink-400 rounded-full"></span> Round 2
-          </h2>
-          <ul className="list-none space-y-4">
-            <li className="relative pl-6 text-gray-300">
-              <span className="absolute left-0 top-1/2 w-1.5 h-1.5 bg-pink-500 bg-opacity-50 rounded-full transform -translate-y-1/2"></span>
-              Offline Round{" "}
-              <span className="ml-2 bg-pink-500 bg-opacity-20 text-pink-400 px-3 py-1 rounded-full text-sm">
-                12HR
-              </span>
-            </li>
-            <li className="relative pl-6 text-gray-300">
-              March 20th, 2024 at 8:00 AM
-            </li>
-            <li className="relative pl-6 text-gray-300">Selected teams only</li>
-            <li className="relative pl-6 text-gray-300">Venue: Main Campus</li>
-          </ul>
+        {/* Hack Domains */}
+        <div className="rounded-2xl backdrop-blur-sm bg-white/5 p-6 border border-white/10">
+          <h2 className="text-2xl font-semibold text-blue-400 mb-6">Hack Domains</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {["Web Development", "Artificial Intelligence", "Blockchain Technology", "Internet of Things (IoT)"].map(
+              (domain) => (
+                <div
+                  key={domain}
+                  className="p-4 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 text-gray-300 hover:text-white text-center hover:scale-105 cursor-pointer border border-transparent hover:border-pink-500/30"
+                >
+                  {domain}
+                </div>
+              ),
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 transition-transform hover:-translate-y-1 hover:bg-opacity-20">
-        <h2 className="text-pink-400 text-xl mb-6 flex items-center gap-2">
-          <span className="w-2 h-2 bg-pink-400 rounded-full"></span> Domains
-        </h2>
-        <ul className="list-none space-y-4">
-          <li className="relative pl-6 text-gray-300">Web Development</li>
-          <li className="relative pl-6 text-gray-300">
-            Artificial Intelligence
-          </li>
-          <li className="relative pl-6 text-gray-300">Blockchain Technology</li>
-          <li className="relative pl-6 text-gray-300">
-            Internet of Things (IoT)
-          </li>
-        </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Details;
