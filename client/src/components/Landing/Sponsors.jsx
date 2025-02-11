@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const sponsors = [
@@ -10,17 +10,15 @@ const sponsors = [
 ];
 
 export default function SponsorsSection() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  };
   return (
-    <div className="min-h-screen bg-black text-white py-20">
+    <div className="min-h-[60%] bg-black text-white py-20">
       {/* Title */}
       <motion.h1
         className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
-        {...fadeIn}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         Our Sponsors
         <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4" />
@@ -28,7 +26,7 @@ export default function SponsorsSection() {
 
       {/* Marquee Sponsors */}
       <div className="relative overflow-hidden py-10 mb-20">
-        <div className="flex animate-marquee whitespace-nowrap">
+        <div className="marquee">
           {/* First set of sponsors */}
           <div className="flex space-x-8 mx-8">
             {sponsors.map((sponsor) => (
@@ -64,7 +62,7 @@ export default function SponsorsSection() {
 
       {/* Call to Action Section */}
       <div className="text-center max-w-2xl mx-auto px-4">
-        <h3 className="text-3xl font-bold mb-4 font-mono" >
+        <h3 className="text-3xl font-bold mb-4 font-mono">
           Interested in Sponsoring?
         </h3>
         <p className="text-neutral-400 mb-8">
@@ -75,6 +73,21 @@ export default function SponsorsSection() {
           Become a Sponsor
         </button>
       </div>
+
+      {/* Tailwind Animations */}
+      <style>{`
+        @keyframes marquee-fast {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .marquee {
+          display: flex;
+          animation: marquee-fast 8s linear infinite;
+        }
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 }

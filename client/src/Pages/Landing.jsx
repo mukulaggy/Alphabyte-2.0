@@ -1,30 +1,40 @@
-import React from 'react'
-import Hero from '../components/Landing/Hero'
-import About from '../components/Landing/About'
-import Timeline from '../components/Landing/Timeline'
-import Details from '../components/Landing/Details'
-import Judges from '../components/Landing/Judges'
-import Sponsors from '../components/Landing/Sponsors'
-import Testimonials from '../components/Landing/Testimonials'
-import FAQ from '../components/Landing/FAQ'
-import Footer from '../components/Landing/Footer'
+import React from "react";
+import Hero from "../components/Landing/Hero";
+import About from "../components/Landing/About";
+import Timeline from "../components/Landing/Timeline";
+import Details from "../components/Landing/Details";
+import Sponsors from "../components/Landing/Sponsors";
+import FAQ from "../components/Landing/FAQ";
+import Footer from "../components/Landing/Footer";
+import Navbar from "../components/Navbar";
 
 const Landing = () => {
   return (
-    <div>
-      <Hero/>
-      <About/>
-      <Details/>
-      <Timeline/>
-      <Judges/>
-      <Sponsors/>
-      <Testimonials/>
-      <FAQ/>
-      <Footer/>
+    <div className="bg-black">
+      <Navbar />
 
-      
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="details">
+        <Details />
+      </section>
+      <section id="timeline">
+        <Timeline />
+      </section>
+      <section id="sponsors">
+        <Sponsors />
+      </section>
+      <section id="faq">
+        <FAQ />
+      </section>
+
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

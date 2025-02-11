@@ -3,215 +3,83 @@ import { motion } from "framer-motion";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import "@dotlottie/player-component";
+import {
+  FaCloudDownloadAlt,
+  FaWhatsapp,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 function Hero() {
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  // Existing particles configuration for ambient effects.
-  const particlesConfig = {
-    particles: {
-      number: {
-        value: 200,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: "#ffffff",
-      },
-      size: {
-        value: 2,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          size_min: 0.1,
-          sync: false,
-        },
-      },
-      move: {
-        enable: true,
-        speed: 0.5,
-        direction: "none",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-      },
-      opacity: {
-        value: 0.8,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: false,
-      },
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: "bubble",
-        },
-      },
-      modes: {
-        bubble: {
-          distance: 250,
-          size: 0,
-          duration: 2,
-          opacity: 0,
-          speed: 3,
-        },
-      },
-    },
-    background: {
-      color: {
-        value: "transparent",
-      },
-    },
-  };
-
-  // Additional particles configuration for falling stars.
-  const fallingStarsConfig = {
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      shape: {
-        type: "star",
-      },
-      color: {
-        value: "#ffffff",
-      },
-      size: {
-        value: 3,
-        random: true,
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: "bottom",
-        straight: false,
-        out_mode: "out",
-      },
-      opacity: {
-        value: 0.9,
-        random: true,
-      },
-    },
-    interactivity: {
-      events: {},
-    },
-    background: {
-      color: {
-        value: "transparent",
-      },
+  const buttonVariants = {
+    initial: { scale: 1 },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 25px rgba(147, 51, 234, 0.5)",
+      transition: { type: "spring", stiffness: 400, damping: 10 },
     },
   };
 
   return (
     <div
-      className="relative min-h-screen overflow-hidden bg-black"
-      style={{ fontFamily: "'Sour Gummy', cursive" }} // Apply the font here.
+      className="relative min-h-screen  overflow-hidden bg-black"
+      style={{ fontFamily: "'Sour Gummy', cursive" }}
     >
-      {/* Glowing Animated Gradient Blobs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/30 rounded-full filter blur-3xl animate-blob shadow-lg shadow-purple-500/50" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000 shadow-lg shadow-pink-500/50" />
+      {/* Background Blobs */}
+      <div className="absolute top-20 left-0 w-96 h-96 bg-purple-500/30 rounded-full filter blur-3xl animate-blob shadow-lg shadow-purple-500/50" />
+      <div className="absolute bottom-24 right-0 w-96 z-10 h-96 bg-pink-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000 shadow-lg shadow-pink-500/50" />
 
-      {/* Ambient Particles Background */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={particlesConfig}
-        className="absolute inset-0"
-      />
+      {/* Center Content */}
+      <div className="absolute inset-0 pt-10 flex flex-col items-center z-10 text-center">
+        {/* Logo */}
+        <motion.img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alphabyte%202.o%20logo-WfgekkjYOeQpyfwlJTMPxP3AT8TsY7.png"
+          alt="Alpha Byte Logo"
+          className="w-[300px] md:w-[600px]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
 
-      {/* Falling Stars Particle Layer */}
-      <Particles
-        id="fallingStars"
-        init={particlesInit}
-        options={fallingStarsConfig}
-        className="absolute inset-0 pointer-events-none"
-      />
-
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 flex items-center justify-between p-6"
-      >
-        <motion.div
-          className="flex items-center space-x-2"
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="w-10 h-10">
-            <dotlottie-player
-              src="https://lottie.host/25c57345-fe4b-4b4a-ae2b-dcba093bb660/YtEqsq0iL2.lottie"
-              background="transparent"
-              speed="1"
-              style={{ width: "100%", height: "100%" }}
-              loop
-              autoplay
-            />
-          </div>
-          <span className="text-xl font-bold text-white">Alphabyte</span>
-        </motion.div>
-
-        <div className="flex items-center space-x-8">
-          {["Home", "About", "Products", "Contact"].map((item, index) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-sm text-white/70 hover:text-white transition-colors"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -2 }}
-            >
-              {item}
-            </motion.a>
-          ))}
+        {/* Buttons */}
+        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-6">
           <motion.button
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-full bg-pink-500 px-6 py-2 text-sm font-medium text-white hover:bg-pink-600 transition-colors"
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
           >
-            FAQ
+            <FaExternalLinkAlt /> Submit on Unstop
+          </motion.button>
+
+          <motion.button
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-green-600 to-green-400 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
+          >
+            <FaWhatsapp /> Join WhatsApp Group
           </motion.button>
         </div>
-      </motion.nav>
 
-      {/* Hero Content */}
-      
+        <motion.button
+          variants={buttonVariants}
+          initial="initial"
+          whileHover="hover"
+          className="px-6 md:px-8 py-2 md:py-3 mt-4 bg-gradient-to-r from-pink-600 to-blue-500 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
+        >
+          <FaCloudDownloadAlt /> Download Problem Statements
+        </motion.button>
+      </div>
 
       {/* Decorative Elements */}
       <div className="absolute inset-0 z-0">
-        {/* Center Lottie Animation (Enlarged for more impact) */}
+        {/* UFO Animation (Hidden on Mobile) */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ width: "500px", height: "500px" }}
-        >
-          
-        </div>
-
-        {/* UFO Animation (Right, slightly enlarged) */}
-        <div
-          className="absolute right-0 top-1/4"
+          className="hidden md:block absolute right-0 top-10"
           style={{ width: "350px", height: "350px" }}
         >
           <dotlottie-player
@@ -224,10 +92,10 @@ function Hero() {
           />
         </div>
 
-        {/* Astronaut Animation (Left, slightly enlarged) */}
+        {/* Astronaut Animation (Visible on All Screens) */}
         <div
           className="absolute left-0 bottom-1/4"
-          style={{ width: "350px", height: "350px" }}
+          style={{ width: "250px", height: "250px" }}
         >
           <dotlottie-player
             src="https://lottie.host/da21a974-35c3-42f6-92a3-c852ccf4fbe2/NRpSWkYuRM.lottie"
@@ -239,7 +107,7 @@ function Hero() {
           />
         </div>
 
-        {/* Animated Rings for a Futuristic Flair */}
+        {/* Animated Rings */}
         {[800, 600, 400].map((size, index) => (
           <motion.div
             key={size}
@@ -260,11 +128,7 @@ function Hero() {
                 ease: "linear",
                 repeat: Infinity,
               },
-              scale: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "reverse",
-              },
+              scale: { duration: 2, repeat: Infinity, repeatType: "reverse" },
             }}
           />
         ))}

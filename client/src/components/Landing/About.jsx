@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const AboutSection = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
+    whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
   };
 
@@ -24,11 +24,14 @@ const AboutSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white py-16 px-4 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-center mb-16"
-          {...fadeIn}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           About AlphaByte
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4" />
@@ -38,6 +41,7 @@ const AboutSection = () => {
           <motion.div
             className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-colors"
             {...fadeIn}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">
               What is AlphaByte?
@@ -54,6 +58,7 @@ const AboutSection = () => {
             className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border hover:border-purple-500/50 border-gray-800 transition-colors"
             {...fadeIn}
             transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl font-semibold mb-6 text-blue-400">
               Event Highlights
@@ -64,8 +69,9 @@ const AboutSection = () => {
                   key={index}
                   className="text-center p-4 bg-gray-800/50 rounded-xl transition-all hover:scale-105"
                   initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
                 >
                   <div className="text-3xl font-bold text-white mb-2">
                     {stat.number}
@@ -80,6 +86,7 @@ const AboutSection = () => {
             className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-colors"
             {...fadeIn}
             transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">
               Why Participate?
@@ -90,8 +97,9 @@ const AboutSection = () => {
                   key={index}
                   className="flex items-center space-x-3"
                   initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  whileInView={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
+                  viewport={{ once: true }}
                 >
                   <div className="w-2 h-2 rounded-full bg-blue-500" />
                   <span className="text-gray-300">{benefit}</span>
@@ -104,6 +112,7 @@ const AboutSection = () => {
             className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-colors"
             {...fadeIn}
             transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-blue-400">
               Location
