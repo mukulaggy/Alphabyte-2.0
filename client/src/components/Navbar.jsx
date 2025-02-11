@@ -22,26 +22,35 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Prevent scrolling when mobile menu is open
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 p-4 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? " backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-10 h-10">
-            <dotlottie-player
-              src="https://lottie.host/25c57345-fe4b-4b4a-ae2b-dcba093bb660/YtEqsq0iL2.lottie"
-              background="transparent"
-              speed="1"
-              style={{ width: "100%", height: "100%" }}
-              loop
-              autoplay
+        <div className="flex h-16 w-64 items-center">
+          {" "}
+          {/* Increased overall size */}
+          <div className="w-20 h-20">
+            {" "}
+            {/* Increased size */}
+            <img
+              className="h-full w-full object-contain" // Ensures it scales properly
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alphabyte%202.o%20logo-WfgekkjYOeQpyfwlJTMPxP3AT8TsY7.png"
+              alt="Alphabyte Logo"
             />
           </div>
-          <span className="text-xl font-bold text-white">Alphabyte</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -53,7 +62,7 @@ const Navbar = () => {
                 to={item.toLowerCase()}
                 smooth={true}
                 duration={800}
-                offset={-80} // Adjusts for navbar height
+                offset={-100}
                 className="text-sm text-white/70 hover:text-white transition-all duration-300 cursor-pointer"
               >
                 {item}
@@ -64,14 +73,21 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="text-white text-2xl">
+          <button
+            onClick={toggleMenu}
+            className="text-white text-2xl z-50 relative"
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="fixed top-0 right-0 w-2/3 h-full bg-black/90 backdrop-blur-md flex flex-col items-center space-y-6 py-20 z-50">
+        <div
+          className={`fixed top-0 right-0 w-3/4 h-screen bg-black/90 backdrop-blur-md transition-transform duration-300 ease-in-out transform ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          } md:hidden`}
+        >
+          <div className="flex flex-col items-center justify-center h-full space-y-8 overflow-y-auto">
             {["Home", "About", "Details", "Timeline", "Sponsors", "FAQ"].map(
               (item) => (
                 <Link
@@ -79,16 +95,16 @@ const Navbar = () => {
                   to={item.toLowerCase()}
                   smooth={true}
                   duration={800}
-                  offset={-80}
+                  offset={-100}
                   className="text-lg text-white hover:text-pink-500 transition-all duration-300 cursor-pointer"
-                  onClick={toggleMenu} // Closes menu after click
+                  onClick={toggleMenu}
                 >
                   {item}
                 </Link>
               )
             )}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
