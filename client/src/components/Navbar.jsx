@@ -87,7 +87,7 @@ const Navbar = () => {
             isOpen ? "translate-x-0" : "translate-x-full"
           } md:hidden`}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8 overflow-y-auto">
+          <div className="flex flex-col items-center justify-start h-full space-y-8 pt-20 overflow-y-auto">
             {["Home", "About", "Details", "Timeline", "Sponsors", "FAQ"].map(
               (item) => (
                 <Link
