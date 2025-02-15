@@ -18,7 +18,7 @@ const CustomArrow = ({ direction, onClick }) => (
   </button>
 );
 
-const Lastyear = () => {
+const Heighlights = () => {
   const settings = {
     dots: false, // Removed the dots
     infinite: true,
@@ -77,4 +77,4 @@ const Lastyear = () => {
   );
 };
 
-export default Lastyear;
+export default Heighlights;

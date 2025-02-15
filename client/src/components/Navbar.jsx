@@ -55,20 +55,27 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          {["Home", "About", "Details", "Timeline", "Sponsors", "FAQ"].map(
-            (item) => (
-              <Link
-                key={item}
-                to={item.toLowerCase()}
-                smooth={true}
-                duration={800}
-                offset={-100}
-                className="text-sm text-white/70 hover:text-white transition-all duration-300 cursor-pointer"
-              >
-                {item}
-              </Link>
-            )
-          )}
+          {[
+            "Home",
+            "About",
+            "Details",
+            "Timeline",
+            "Sponsors",
+            "FAQ",
+            "Prizes",
+            "Heighlights",
+          ].map((item) => (
+            <Link
+              key={item}
+              to={item.toLowerCase()}
+              smooth={true}
+              duration={800}
+              offset={-100}
+              className="text-sm text-white/70 hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Menu Button */}
@@ -88,21 +95,28 @@ const Navbar = () => {
           } md:hidden`}
         >
           <div className="flex flex-col items-center justify-start h-full space-y-8 pt-20 overflow-y-auto">
-            {["Home", "About", "Details", "Timeline", "Sponsors", "FAQ"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  to={item.toLowerCase()}
-                  smooth={true}
-                  duration={800}
-                  offset={-100}
-                  className="text-lg text-white hover:text-pink-500 transition-all duration-300 cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  {item}
-                </Link>
-              )
-            )}
+            {[
+              "Home",
+              "About",
+              "Details",
+              "Timeline",
+              "Sponsors",
+              "FAQ",
+              "Prizes",
+              "Heighlights",
+            ].map((item) => (
+              <Link
+                key={item}
+                to={item.toLowerCase()}
+                smooth={true}
+                duration={800}
+                offset={-100}
+                className="text-lg text-white hover:text-pink-500 transition-all duration-300 cursor-pointer"
+                onClick={toggleMenu}
+              >
+                {item}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

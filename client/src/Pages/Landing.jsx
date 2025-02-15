@@ -8,7 +8,7 @@ import FAQ from "../components/Landing/FAQ";
 import Footer from "../components/Landing/Footer";
 import Navbar from "../components/Navbar";
 import Prizes from "../components/Landing/Prises";
-import Lastyear from "../components/Landing/Lastyear";
+import Heighlights from "../components/Landing/Heighlights";
 
 const Landing = () => {
   return (
@@ -33,8 +33,8 @@ const Landing = () => {
       <section id="prizes">
         <Prizes />
       </section>
-      <section id="lastyear">
-        <Lastyear/>
+      <section id="heighlights">
+        <Heighlights />
       </section>
       <section id="faq">
         <FAQ />
