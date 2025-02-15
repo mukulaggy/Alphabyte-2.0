@@ -7,6 +7,8 @@ import Sponsors from "../components/Landing/Sponsors";
 import FAQ from "../components/Landing/FAQ";
 import Footer from "../components/Landing/Footer";
 import Navbar from "../components/Navbar";
+import Prizes from "../components/Landing/Prises";
+import Lastyear from "../components/Landing/Lastyear";
 
 const Landing = () => {
   return (
@@ -27,6 +29,12 @@ const Landing = () => {
       </section>
       <section id="sponsors">
         <Sponsors />
+      </section>
+      <section id="prizes">
+        <Prizes />
+      </section>
+      <section id="lastyear">
+        <Lastyear/>
       </section>
       <section id="faq">
         <FAQ />

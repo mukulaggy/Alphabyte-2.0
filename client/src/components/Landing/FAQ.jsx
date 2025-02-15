@@ -32,7 +32,7 @@ export default function FAQ() {
   return (
     <div className=" min-h-screen bg-black text-white relative overflow-hidden flex justify-center items-center">
       <div className="w-full max-w-2xl ">
-        <h1 className="text-5xl font-bold text-center mb-16">
+        <h1 className="text-5xl font-bold text-center ">
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
           {...fadeIn}
