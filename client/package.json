@@ -27,7 +27,8 @@
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "three": "^0.173.0",
-    "tsparticles": "^3.8.1"
+    "tsparticles": "^3.8.1",
+    "lucide-react": "^0.311.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
