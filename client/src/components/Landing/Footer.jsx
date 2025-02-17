@@ -64,7 +64,7 @@ const Footer = () => {
                   href="mailto:contact@alphabyte.com"
                   className="hover:text-pink-500"
                 >
-                  contact@alphabyte.com
+                  gdgcpccoe@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

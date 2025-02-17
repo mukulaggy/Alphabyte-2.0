@@ -42,8 +42,8 @@ export default function EventDetails() {
                 </div>
                 <p className="text-gray-400">
                   {index === 0
-                    ? "March 15th, 2024 at 11:55 PM"
-                    : "March 20th, 2024 at 8:00 AM"}
+                    ? "Feb 21nd, 2025 at 11:55 PM"
+                    : "March 8th, 2024 at 8:00 AM"}
                 </p>
                 <p className="text-gray-400">
                   {index === 0

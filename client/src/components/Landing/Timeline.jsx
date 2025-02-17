@@ -10,7 +10,7 @@ export default function Timeline() {
     },
     {
       title: "Round 1 Begins",
-      date: "March 22nd, 2025",
+      date: "Feb 22nd, 2025",
       description: "36-hour online hackathon starts",
       position: "left",
     },

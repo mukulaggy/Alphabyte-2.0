@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const sponsors = [
@@ -10,6 +10,29 @@ const sponsors = [
 ];
 
 export default function SponsorsSection() {
+  const handleSponsorClick = () => {
+    const email = "gdgcpccoe@gmail.com";
+    const subject = "Interest in Becoming a Sponsor for Alphabyte Hackathon";
+    const body = `Dear GDG PCCOE Team,
+
+I would like to express my interest in becoming a sponsor for the Alphabyte Hackathon.
+
+Please find my details below:
+- Name: 
+- Company: 
+- Sponsorship Tier Interest: 
+- Message: 
+
+I look forward to hearing from you.
+
+Best Regards,
+[Your Name]`;
+
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <div className="min-h-[60%] bg-black text-white py-20">
       {/* Title */}
@@ -27,36 +50,23 @@ export default function SponsorsSection() {
       {/* Marquee Sponsors */}
       <div className="relative overflow-hidden py-10 mb-20">
         <div className="marquee">
-          {/* First set of sponsors */}
-          <div className="flex space-x-8 mx-8">
-            {sponsors.map((sponsor) => (
-              <div
-                key={sponsor.id}
-                className="inline-flex mx-4 w-[300px] h-[200px] bg-neutral-900/50 backdrop-blur-sm rounded-xl border border-neutral-800 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-neutral-400">
-                    {sponsor.name}
-                  </span>
+          {/* Sponsor Cards */}
+          {[...Array(2)].map((_, index) => (
+            <div key={index} className="flex space-x-8 mx-8">
+              {sponsors.map((sponsor) => (
+                <div
+                  key={`${sponsor.id}-${index}`}
+                  className="inline-flex mx-4 w-[300px] h-[200px] bg-neutral-900/50 backdrop-blur-sm rounded-xl border border-neutral-800 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-2xl font-bold text-neutral-400">
+                      {sponsor.name}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          {/* Duplicate set for seamless loop */}
-          <div className="flex space-x-8 mx-8">
-            {sponsors.map((sponsor) => (
-              <div
-                key={`${sponsor.id}-duplicate`}
-                className="inline-flex mx-4 w-[300px] h-[200px] bg-neutral-900/50 backdrop-blur-sm rounded-xl border border-neutral-800 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-neutral-400">
-                    {sponsor.name}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -69,20 +79,28 @@ export default function SponsorsSection() {
           Join us in fostering innovation and supporting the next generation of
           tech leaders
         </p>
-        <button className="bg-blue-400 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105">
+        <button
+          onClick={handleSponsorClick}
+          className="bg-blue-400 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105"
+        >
           Become a Sponsor
         </button>
       </div>
 
-      {/* Tailwind Animations */}
-      <style>{`
+      {/* Marquee Animation Styles */}
+      <style jsx>{`
         @keyframes marquee-fast {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
         }
         .marquee {
           display: flex;
-          animation: marquee-fast 8s linear infinite;
+          animation: marquee-fast 20s linear infinite;
+          width: max-content;
         }
         .marquee:hover {
           animation-play-state: paused;
