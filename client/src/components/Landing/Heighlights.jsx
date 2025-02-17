@@ -33,29 +33,29 @@ const Heighlights = () => {
 
   const images = [
     {
-      src: "https://plus.unsplash.com/premium_photo-1739016808747-f96b411ed186?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+      src: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739792038/DSCF1293_pr97s0.jpg",
       alt: "Alphabyte 1.0 Opening Ceremony",
     },
     {
-      src: "https://images.unsplash.com/photo-1739372425274-d41281e72c5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+      src: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739792481/IMG_6048_nwl80f.jpg",
       alt: "Participants Coding",
     },
     {
-      src: "https://images.unsplash.com/photo-1739367889567-d63734f6df95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8",
+      src: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739792482/IMG_6138_jgcubg.jpg",
       alt: "Workshop Session",
     },
     {
-      src: "https://plus.unsplash.com/premium_photo-1739131476773-02a75eb96d5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8",
-      alt: "Prize Distribution",
+      src: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739792482/IMG_6995_xptesq.jpg",
+      alt: "",
     },
     {
-      src: "https://images.unsplash.com/photo-1739436114273-f894053b2429?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "Winning Team",
+      src: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739792481/IMG_6250_wz3036.jpg ",
+      alt: "Our Team",
     },
   ];
 
   return (
-    <div className="container pt-40 mx-auto px-4  relative">
+    <div className="container pt-40 mx-auto px-4 relative">
       <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-10 animate__animated animate__fadeInDown">
         Alphabyte 1.0 Highlights
       </h2>
@@ -66,7 +66,7 @@ const Heighlights = () => {
               <img
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
-                className="w-full h-[400px] object-cover rounded-lg"
+                className="w-full h-[600px] rounded-lg object-cover" // Changed from 400px to 600px
               />
               <p className="text-center text-gray-300 mt-4">{image.alt}</p>
             </div>

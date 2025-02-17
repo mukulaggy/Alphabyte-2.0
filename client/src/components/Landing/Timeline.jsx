@@ -4,31 +4,31 @@ export default function Timeline() {
   const timelineItems = [
     {
       title: "Registration Opens",
-      date: "March 1st, 2024",
+      date: "Feb 19, 2025",
       description: "Early bird registrations begin with special benefits",
       position: "right",
     },
     {
       title: "Round 1 Begins",
-      date: "March 15th, 2024",
+      date: "March 22nd, 2025",
       description: "36-hour online hackathon starts",
       position: "left",
     },
     {
       title: "Round 1 Results",
-      date: "March 17th, 2024",
+      date: "March 4th, 2025",
       description: "Shortlisted teams announced",
       position: "right",
     },
     {
       title: "Final Round",
-      date: "March 20th, 2024",
+      date: "March 8th, 2025",
       description: "12-hour offline hackathon at main campus",
       position: "left",
     },
     {
       title: "Prize Distribution",
-      date: "March 20th, 2024",
+      date: "March 8th, 2025",
       description: "Winner announcement and awards ceremony",
       position: "right",
     },

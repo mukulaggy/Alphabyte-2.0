@@ -12,9 +12,9 @@ const AboutSection = () => {
 
   const stats = [
     { number: "36", label: "Hours of Coding" },
-    { number: "500+", label: "Participants" },
-    { number: "20+", label: "Mentors" },
-    { number: "₹2L+", label: "In Prizes" },
+    { number: "100+", label: "Participants" },
+    { number: "20+", label: "Volunteers" },
+    { number: "₹40k+", label: "In Prizes" },
   ];
 
   const benefits = [

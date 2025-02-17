@@ -73,10 +73,10 @@ export default function EventDetails() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              "Web Development",
-              "Artificial Intelligence",
+              "AI-ML",
+              "Healthcare",
               "Blockchain Technology",
-              "Internet of Things (IoT)",
+              "Cybersecurity",
             ].map((domain, index) => (
               <motion.div
                 key={domain}

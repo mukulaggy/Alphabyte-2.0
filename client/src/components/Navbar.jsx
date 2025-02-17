@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "@dotlottie/player-component";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -31,6 +33,9 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  const handleLogoClick = () => {
+    window.location.href = "/"; // This will force a full page refresh
+  };
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -39,14 +44,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex h-16 w-64 items-center">
-          {" "}
-          {/* Increased overall size */}
-          <div className="w-20 h-20">
-            {" "}
-            {/* Increased size */}
+        <div
+          onClick={handleLogoClick}
+          className="flex items-center justify-center h-20 w-20 cursor-pointer"
+        >
+          <div className="w-full h-full">
             <img
-              className="h-full w-full object-contain" // Ensures it scales properly
+              className="h-full w-full object-contain hover:scale-105 transition-transform"
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alphabyte%202.o%20logo-WfgekkjYOeQpyfwlJTMPxP3AT8TsY7.png"
               alt="Alphabyte Logo"
             />
