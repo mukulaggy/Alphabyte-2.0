@@ -46,7 +46,7 @@ const Footer = () => {
                 <FaLinkedin className="text-white w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/GDG-PCCoE"
                 className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-pink-500 transition-colors"
               >
                 <FaGithub className="text-white w-5 h-5" />

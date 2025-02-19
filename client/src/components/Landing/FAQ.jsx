@@ -23,7 +23,7 @@ export default function FAQ() {
     {
       question: "What are the prizes?",
       answer:
-        "The total prize pool is ₹60k+, with additional sponsor track prizes and special mentions.",
+        "The total prize pool is ₹50k+, with additional sponsor track prizes and special mentions.",
     },
     {
       question: "What should I bring?",

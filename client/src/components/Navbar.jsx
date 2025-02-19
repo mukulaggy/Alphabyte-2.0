@@ -64,10 +64,11 @@ const Navbar = () => {
             "About",
             "Details",
             "Timeline",
-            "Sponsors",
-            "FAQ",
+            "Rulebook",
             "Prizes",
             "Heighlights",
+            "Sponsors",
+            "FAQ",
           ].map((item) => (
             <Link
               key={item}
@@ -104,10 +105,11 @@ const Navbar = () => {
               "About",
               "Details",
               "Timeline",
-              "Sponsors",
-              "FAQ",
+              "Rulebook",
               "Prizes",
               "Heighlights",
+              "Sponsors",
+              "FAQ",
             ].map((item) => (
               <Link
                 key={item}
