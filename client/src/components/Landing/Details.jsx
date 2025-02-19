@@ -43,7 +43,7 @@ export default function EventDetails() {
                 <p className="text-gray-400">
                   {index === 0
                     ? "Feb 21nd, 2025 at 11:55 PM"
-                    : "March 8th, 2024 at 8:00 AM"}
+                    : "March 8th, 2025 at 9:00 AM"}
                 </p>
                 <p className="text-gray-400">
                   {index === 0

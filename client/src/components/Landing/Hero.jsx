@@ -36,7 +36,7 @@ function Hero() {
       <div className="absolute inset-0 pt-10 flex flex-col items-center z-10 text-center">
         {/* Logo */}
         <motion.img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alphabyte%202.o%20logo-WfgekkjYOeQpyfwlJTMPxP3AT8TsY7.png"
+          src="https://res.cloudinary.com/dloe8x9e4/image/upload/v1739935199/2.0_alphabyte-removebg-preview_1_tuem8m.png"
           alt="Alpha Byte Logo"
           className="w-[300px] md:w-[600px]"
           initial={{ opacity: 0, y: -20 }}

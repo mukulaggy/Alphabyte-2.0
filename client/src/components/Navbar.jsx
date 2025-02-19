@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="w-full h-full">
             <img
               className="h-full w-full object-contain hover:scale-105 transition-transform"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alphabyte%202.o%20logo-WfgekkjYOeQpyfwlJTMPxP3AT8TsY7.png"
+              src="https://res.cloudinary.com/dloe8x9e4/image/upload/v1739935199/2.0_alphabyte-removebg-preview_1_tuem8m.png"
               alt="Alphabyte Logo"
             />
           </div>
