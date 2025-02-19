@@ -34,7 +34,7 @@ export default function EventDetails() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <span className="px-3 py-1 text-sm bg-pink-500/20 rounded-full text-pink-400">
-                    {index === 0 ? "36HR" : "12HR"}
+                    {index === 0 ? "24HR" : "12HR"}
                   </span>
                   <span className="text-gray-300">
                     {index === 0 ? "Online Round" : "Offline Round"}
@@ -42,8 +42,8 @@ export default function EventDetails() {
                 </div>
                 <p className="text-gray-400">
                   {index === 0
-                    ? "Feb 21nd, 2025 at 11:55 PM"
-                    : "March 8th, 2025 at 9:00 AM"}
+                    ? "1st March 12pm To 2nd March 12pm"
+                    : "8th March 9am To 8th march 9pm"}
                 </p>
                 <p className="text-gray-400">
                   {index === 0
@@ -51,9 +51,7 @@ export default function EventDetails() {
                     : "Selected teams only"}
                 </p>
                 <p className="text-gray-400">
-                  {index === 0
-                    ? "Multiple hack domains available"
-                    : "Venue: Main Campus"}
+                  {index === 0 ? "(Online)" : "Venue: PCCOE Campus (offline)"}
                 </p>
               </div>
             </motion.div>

@@ -4,14 +4,14 @@ export default function Timeline() {
   const timelineItems = [
     {
       title: "Registration Opens",
-      date: "Feb 19, 2025",
+      date: "Feb 19, 2025  (Last date to register 27th Feb 11:59PM)",
       description: "Early bird registrations begin with special benefits",
       position: "right",
     },
     {
       title: "Round 1 Begins",
-      date: "Feb 22nd, 2025",
-      description: "36-hour online hackathon starts",
+      date: "March 1st, 2025",
+      description: "24-hour online hackathon starts",
       position: "left",
     },
     {
@@ -64,8 +64,6 @@ export default function Timeline() {
                 transition={{ duration: 0.7, delay: index * 0.2 }}
                 className="relative flex items-center flex-col md:flex-row"
               >
-                
-
                 <div
                   className={`flex w-full ${
                     item.position === "left"
