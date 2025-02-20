@@ -4,7 +4,7 @@ const Prizes = () => {
       {
         position: "2nd",
         title: "Runner Up",
-        amount: "₹12,000",
+        amount: "₹15,000",
         features: [
           "Swags",
           "certificate",
@@ -16,7 +16,7 @@ const Prizes = () => {
       {
         position: "1st",
         title: "Winner",
-        amount: "₹20,000",
+        amount: "₹25,000",
         features: [
           "Sponsored Prizes",
           "Premium Swag Kit",
@@ -30,7 +30,7 @@ const Prizes = () => {
       {
         position: "3rd",
         title: "Second Runner Up",
-        amount: "₹8,000",
+        amount: "₹10,000",
         features: ["Certificate"],
         borderColor: "border-bronze",
         animation: "animate__fadeInRight",
