@@ -46,23 +46,29 @@ function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-6">
-          <motion.button
+          <motion.a
+            href="https://unstop.com/hackathons/alphabyte-20-national-level-hackathon-pimpri-chinchwad-college-of-engineering-pccoe-pune-1405902"
+            target="_blank"
+            rel="noopener noreferrer"
             variants={buttonVariants}
             initial="initial"
             whileHover="hover"
             className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
           >
-            <FaExternalLinkAlt /> Submit on Unstop
-          </motion.button>
+            <FaExternalLinkAlt /> Register on Unstop
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="https://chat.whatsapp.com/HfzxWb3Gfdq3naUvMedvx8"
+            target="_blank"
+            rel="noopener noreferrer"
             variants={buttonVariants}
             initial="initial"
             whileHover="hover"
             className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-green-600 to-green-400 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
           >
             <FaWhatsapp /> Join WhatsApp Group
-          </motion.button>
+          </motion.a>
         </div>
 
         <motion.button
