@@ -16,7 +16,7 @@ const Prizes = () => {
       {
         position: "1st",
         title: "Winner",
-        amount: "₹25,000",
+        amount: "₹20,000",
         features: [
           "Sponsored Prizes",
           "Premium Swag Kit",
