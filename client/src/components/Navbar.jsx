@@ -36,17 +36,18 @@ const Navbar = () => {
   const handleLogoClick = () => {
     window.location.href = "/"; // This will force a full page refresh
   };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? " backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         {/* Logo */}
         <div
           onClick={handleLogoClick}
-          className="flex items-center justify-center h-20 w-20 cursor-pointer"
+          className="flex items-center justify-center h-16 w-16 cursor-pointer"
         >
           <div className="w-full h-full">
             <img
@@ -58,7 +59,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6">
           {[
             "Home",
             "About",
@@ -99,7 +100,7 @@ const Navbar = () => {
             isOpen ? "translate-x-0" : "translate-x-full"
           } md:hidden`}
         >
-          <div className="flex flex-col items-center justify-start h-full space-y-8 pt-20 overflow-y-auto">
+          <div className="flex flex-col items-center justify-start h-full space-y-6 pt-16 overflow-y-auto">
             {[
               "Home",
               "About",
