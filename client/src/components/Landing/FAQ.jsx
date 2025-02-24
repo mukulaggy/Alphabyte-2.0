@@ -28,7 +28,7 @@ export default function FAQ() {
     {
       question: "What should I bring?",
       answer:
-        "Laptop, charger, and student ID are mandatory. For offline rounds, accommodation will be provided.",
+        "Laptop, charger, and student ID are mandatory. For offline rounds.",
     },
   ];
 
