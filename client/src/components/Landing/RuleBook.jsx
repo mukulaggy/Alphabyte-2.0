@@ -238,7 +238,7 @@ const RuleBook = () => {
           initial="initial"
           whileHover="hover"
           onClick={() => {
-            const pdfUrl = "/src/assets/Rulebook/Alphabyte2025_rulebook.pdf";
+            const pdfUrl = "/Alphabyte2025_rulebook.pdf"; // Updated path to the PDF file in the public folder
             saveAs(pdfUrl, "Alphabyte2025_rulebook.pdf");
           }}
           className="px-4 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-pink-600 to-blue-500 rounded-full 
