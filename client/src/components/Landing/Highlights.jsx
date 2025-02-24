@@ -18,7 +18,7 @@ const CustomArrow = ({ direction, onClick }) => (
   </button>
 );
 
-const Heighlights = () => {
+const Highlights = () => {
   const settings = {
     dots: false, // Removed the dots
     infinite: true,
@@ -77,4 +77,4 @@ const Heighlights = () => {
   );
 };
 
-export default Heighlights;
+export default Highlights;

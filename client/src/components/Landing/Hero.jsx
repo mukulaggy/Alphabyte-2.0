@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { motion } from "framer-motion";
-import Particles from "react-particles";
+
 import { loadFull } from "tsparticles";
 import "@dotlottie/player-component";
 import {
@@ -8,11 +8,12 @@ import {
   FaWhatsapp,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 function Hero() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //   await loadFull(engine);
+  // }, []);
 
   const buttonVariants = {
     initial: { scale: 1 },
@@ -76,6 +77,17 @@ function Hero() {
           initial="initial"
           whileHover="hover"
           className="px-6 md:px-8 py-2 md:py-3 mt-4 bg-gradient-to-r from-pink-600 to-blue-500 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
+          onClick={() => {
+            toast("Problem Statements will be available soon!",   
+              {
+              icon: '⏳',
+              style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+              },
+            });
+          }}
         >
           <FaCloudDownloadAlt /> Download Problem Statements
         </motion.button>

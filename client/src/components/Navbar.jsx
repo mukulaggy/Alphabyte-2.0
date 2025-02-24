@@ -66,7 +66,7 @@ const Navbar = () => {
             "Timeline",
             "Rulebook",
             "Prizes",
-            "Heighlights",
+            "Highlights",
             "Sponsors",
             "FAQ",
           ].map((item) => (
@@ -107,7 +107,7 @@ const Navbar = () => {
               "Timeline",
               "Rulebook",
               "Prizes",
-              "Heighlights",
+              "Highlights",
               "Sponsors",
               "FAQ",
             ].map((item) => (
