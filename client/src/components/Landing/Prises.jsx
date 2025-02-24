@@ -40,19 +40,25 @@ const Prizes = () => {
     specialPrizes: [
       {
         title: "Most Innovative",
-        amount: "₹1,500",
+        amount: "₹1,250",
         description: "For the most innovative solution",
         animationDelay: "",
       },
       {
         title: "Best UI/UX",
-        amount: "₹1,500",
+        amount: "₹1,250",
         description: "For outstanding design implementation",
         animationDelay: "animate__delay-1s",
       },
       {
         title: "Best First Time Hackers",
-        amount: "₹1,500",
+        amount: "₹1,250",
+        description: "For exceptional first-time participants",
+        animationDelay: "animate__delay-2s",
+      },
+      {
+        title: "Most Exceptional",
+        amount: "₹1,250",
         description: "For exceptional first-time participants",
         animationDelay: "animate__delay-2s",
       },
@@ -140,7 +146,7 @@ const Prizes = () => {
         <h3 className="text-3xl font-bold text-center text-white mb-10 animate__animated animate__fadeInUp">
           Special Category Prizes
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {prizesData.specialPrizes.map((prize, index) => (
             <div
               key={index}
@@ -152,6 +158,7 @@ const Prizes = () => {
               <div className="text-2xl font-bold text-white mb-2">
                 {prize.amount}
               </div>
+             
               <p className="text-gray-400">{prize.description}</p>
             </div>
           ))}

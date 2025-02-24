@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
+import sgcImage from "../../sponsors/sgc.jpg"; // Adjust path based on location
 
 const sponsors = [
   {
     id: 1,
-    name: "The Chezy Box",
+    name: "The Cheezy Box Cafe",
     image:
       "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739935626/chezybox_bu9imx.jpg",
   },
-  { id: 2, name: "Company B", image: "/placeholder.svg" },
+  { id: 2, name: "Shree Ganesh Construction ", image:sgcImage},
   { id: 3, name: "Company C", image: "/placeholder.svg" },
   { id: 4, name: "Company D", image: "/placeholder.svg" },
   { id: 5, name: "Company E", image: "/placeholder.svg" },
