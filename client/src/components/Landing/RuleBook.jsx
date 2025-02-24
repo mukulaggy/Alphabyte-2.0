@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
+import { saveAs } from "file-saver";
 
 const buttonVariants = {
   initial: { scale: 1 },
@@ -23,13 +24,16 @@ const RuleBook = () => {
   const isMobile = useMediaQuery({ maxWidth: "640px" });
 
   const coverImage =
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png";
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422728/1_crykr1.png";
   const pages = [
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png",
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png",
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png",
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png",
-    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739973366/Aadi_s_Copy_of_RB_2025_daef8y.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422728/2_tkbpcz.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/3_wu2d0k.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/4_zf6pfu.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/5_c6itej.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/6_lnq7mk.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422728/7_ekjkr0.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/8_csteoa.png",
+    "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740422727/9_psevbo.png",
   ];
 
   useEffect(() => {
@@ -89,7 +93,7 @@ const RuleBook = () => {
   );
 
   const DesktopNavigation = () => (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+    <div className="flex items-center justify-center gap-6 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
       <button
         onClick={() => flipPage("prev")}
         disabled={currentPage === 0 || isFlipping}
@@ -125,7 +129,7 @@ const RuleBook = () => {
             <h2 className="text-lg text-white/90 mb-4">Rulebook</h2>
             <div className="relative w-3/4 aspect-[3/4] overflow-hidden rounded-lg">
               <img
-                src={coverImage}
+                src={coverImage || "/placeholder.svg"}
                 alt="Rulebook Cover"
                 className="w-full h-full object-cover"
               />
@@ -135,7 +139,7 @@ const RuleBook = () => {
         </div>
       ) : (
         <img
-          src={pages[currentPage - 1]}
+          src={pages[currentPage - 1] || "/placeholder.svg"}
           alt={`Page ${currentPage}`}
           className="w-full h-full object-cover"
         />
@@ -144,11 +148,13 @@ const RuleBook = () => {
   );
 
   return (
-    <div className="relative min-h-screen w-full bg-black p-4  sm:p-8 my-20 sm:my-40">
+    <div className="relative min-h-screen w-full bg-black p-4 sm:p-8 my-20 sm:my-40">
       <div className="relative max-w-5xl mx-auto perspective-1000">
-        {/* Mobile Navigation Arrows */}
-        {isMobile && (
+        {/* Conditional Rendering based on screen size */}
+        {isMobile ? (
           <>
+            <MobileView />
+            {/* Mobile Navigation Arrows */}
             {currentPage > 0 && (
               <MobileNavigation
                 direction="prev"
@@ -163,12 +169,11 @@ const RuleBook = () => {
                 disabled={isFlipping}
               />
             )}
+            {/* Mobile Page Counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs text-white/90">
+              Page {currentPage + 1} of {totalPages}
+            </div>
           </>
-        )}
-
-        {/* Conditional Rendering based on screen size */}
-        {isMobile ? (
-          <MobileView />
         ) : (
           <>
             <HTMLFlipBook
@@ -201,7 +206,7 @@ const RuleBook = () => {
                   <h2 className="text-2xl text-white/90 mb-8">Rulebook</h2>
                   <div className="relative w-3/4 aspect-[3/4] overflow-hidden rounded-lg">
                     <img
-                      src={coverImage}
+                      src={coverImage || "/placeholder.svg"}
                       alt="Rulebook Cover"
                       className="w-full h-full object-cover"
                     />
@@ -214,32 +219,28 @@ const RuleBook = () => {
               {pages.map((pageUrl, index) => (
                 <div key={index} className="bg-white">
                   <img
-                    src={pageUrl}
+                    src={pageUrl || "/placeholder.svg"}
                     alt={`Page ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
               ))}
             </HTMLFlipBook>
-
-            {/* Desktop Navigation */}
-            <DesktopNavigation />
           </>
         )}
-
-        {/* Mobile Page Counter */}
-        {isMobile && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs text-white/90">
-            Page {currentPage + 1} of {totalPages}
-          </div>
-        )}
       </div>
-      {/* Download Button - Moved below book content */}
-      <div className="flex justify-center ">
+
+      {/* Navigation and Download Buttons */}
+      <div className="flex flex-col items-center gap-6 mt-8">
+        {!isMobile && <DesktopNavigation />}
         <motion.button
           variants={buttonVariants}
           initial="initial"
           whileHover="hover"
+          onClick={() => {
+            const pdfUrl = "/src/assets/Rulebook/Alphabyte2025_rulebook.pdf";
+            saveAs(pdfUrl, "Alphabyte2025_rulebook.pdf");
+          }}
           className="px-4 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-pink-600 to-blue-500 rounded-full 
                text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-xs sm:text-base
                hover:shadow-[0_0_15px_rgba(219,39,119,0.5)]"
