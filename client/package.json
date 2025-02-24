@@ -21,6 +21,7 @@
     "lucide-react": "^0.311.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.5.2",
     "react-icons": "^5.4.0",
     "react-pageflip": "^2.0.3",
     "react-particles": "^2.12.2",
