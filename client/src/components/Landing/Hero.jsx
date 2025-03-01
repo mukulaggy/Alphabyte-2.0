@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+
 import { saveAs } from "file-saver";
 
 function Hero() {
