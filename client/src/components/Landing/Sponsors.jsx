@@ -8,8 +8,13 @@ const sponsors = [
     image:
       "https://res.cloudinary.com/dloe8x9e4/image/upload/v1739935626/chezybox_bu9imx.jpg",
   },
-  { id: 2, name: "Shree Ganesh Construction ", image:sgcImage},
-  { id: 3, name: "Company C", image: "/placeholder.svg" },
+  { id: 2, name: "Shree Ganesh Construction ", image: sgcImage },
+  {
+    id: 3,
+    name: "Danalitic",
+    image:
+      "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740801066/danalitic_logo_i07ket.jpg",
+  },
   { id: 4, name: "Company D", image: "/placeholder.svg" },
   { id: 5, name: "Company E", image: "/placeholder.svg" },
 ];
