@@ -15,7 +15,7 @@ const sponsors = [
     image:
       "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740801066/danalitic_logo_i07ket.jpg",
   },
-  { id: 4, name: "Company D", image: "/placeholder.svg" },
+  { id: 4, name: "Script Analytica", image: "https://res.cloudinary.com/dloe8x9e4/image/upload/v1740834564/bda4f7dd-45c7-4c71-9756-137bf48a813d_runv9s.jpg" },
   { id: 5, name: "Company E", image: "/placeholder.svg" },
 ];
 
