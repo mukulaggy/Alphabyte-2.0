@@ -8,6 +8,7 @@ import {
   FaWhatsapp,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import { saveAs } from "file-saver";
 
 function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -75,6 +76,10 @@ function Hero() {
           variants={buttonVariants}
           initial="initial"
           whileHover="hover"
+          onClick={() => {
+            const pdfUrl = "/Alphabyteps.pdf"; // Updated path to the PDF file in the public folder
+            saveAs(pdfUrl, "Alphabyte2025_Problem_Statements.pdf");
+          }}
           className="px-6 md:px-8 py-2 md:py-3 mt-4 bg-gradient-to-r from-pink-600 to-blue-500 rounded-full text-white font-medium tracking-wide shadow-lg flex items-center gap-2 text-sm md:text-base"
         >
           <FaCloudDownloadAlt /> Download Problem Statements
