@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../components/Landing/Hero";
 import About from "../components/Landing/About";
 import Timeline from "../components/Landing/Timeline";
@@ -8,14 +7,13 @@ import FAQ from "../components/Landing/FAQ";
 import Footer from "../components/Landing/Footer";
 import Navbar from "../components/Navbar";
 import Prizes from "../components/Landing/Prises";
-import Heighlights from "../components/Landing/Heighlights";
+import Highlights from "../components/Landing/Highlights";
 import RuleBook from "../components/Landing/RuleBook";
 
 const Landing = () => {
   return (
     <div className="bg-black">
       <Navbar />
-
       <section id="home">
         <Hero />
       </section>
@@ -34,8 +32,8 @@ const Landing = () => {
       <section id="prizes">
         <Prizes />
       </section>
-      <section id="heighlights">
-        <Heighlights />
+      <section id="highlights">
+        <Highlights />
       </section>
       <section id="sponsors">
         <Sponsors />
